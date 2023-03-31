@@ -1,0 +1,159 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Fejléc formázása*/
+#header {
+    display: flex;
+    justify-content: space-between;
+}
+
+body {
+  background: url(hatter.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+/* H1 -es címsor formázása*/
+h1{
+    margin: 0 0 1em 0.2em;
+    font-size: 25px;
+}
+
+/* H2 -es címsor formázása*/
+h2{
+    font-size: 20px;
+    margin: 0;
+}
+
+.how_to{
+    margin: 0 1rem;
+}
+
+.how_to,
+#close_how_to_modal{
+    cursor: pointer;
+}
+
+#close_how_to_modal{
+    float: right;
+}
+
+#modal{
+    border: none;
+    width: 30em;
+    height: 28em;
+    font-size: 20px;
+}
+
+li{
+    margin: 0 0 13px;
+}
+
+
+/* Egészterület konténere*/
+#whole_game_area_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap:5px;
+}
+.container {
+    display: grid;
+    width: 250px;
+    height: 250px;
+    border: 1px solid black;
+}
+.square_div{
+    border:1px solid black;
+}
+
+.draggable{
+    display: inline-flex;
+    border: 2px solid black;
+    width:fit-content;
+}
+.box {
+    height: 23px;
+    width: 23px;
+    border:1px solid black;
+}
+
+#start {
+    display: none;
+}
+
+
+/* A halók elhelyezkedése*/
+#whole_friendly_area_container {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:6px;
+}
+
+
+/* A saját hajók konténere játék kezdés előtt*/
+#all_ship_container{
+    display: flex;
+    flex-direction: column;
+    gap: inherit;
+}
+
+#ai_container {
+    display: none;
+}
+
+
+/* A játéktér amin a hajók elhelyezkednek*/
+#human_area_container{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    gap: 10px;
+}
+
+#score_card_container{
+    display: none;
+}
+
+.player_score_card{
+    display: flex;
+    flex-direction: column;
+}
+/* A saját játkadatinak margójának beállítása+formázás*/
+#human_score_card{
+    border-right: 2px solid;
+    padding-right: 10px;
+}
+
+/* A gép játkadatinak margójának beállítása*/
+#ai_score_card{
+    padding-left: 10px;
+}
+
+
+/* Én a gép elhibázott lövéseinek konténere*/
+#human_missed_hits,
+#ai_missed_hits{
+    margin-bottom: 0px;
+}
+
+@media screen and (max-width: 375px) {
+    .container {
+        display: grid;
+        width: 210px;
+        height: 210px;
+        border: 1px solid black;
+    }
+    .box {
+        height: 18px;
+        
+       
+    width: 18px;
+        border: 1px solid black;
+    }
+}

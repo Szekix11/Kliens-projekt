@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <title>Torpedó</title>
+</head>
+<body>
+    <div id="header">
+        <h1>Torpedó</h1>
+        <span class="how_to">
+		<img src="info_icon.ico" alt="További információ" title="Tudni valók a játékról">
+		Tudni valók a játékról
+		</span>
+    </div>
+    <dialog id="modal">
+        <span id="close_how_to_modal">x</span>
+        <h2>Játékról</h2>
+        <p> 
+			A Torpedó játék célja, hogy megpróbálja elsüllyeszteni az ellenfél összes hajóját, mielőtt azok elsüllyesztik a tiédet. 
+			A játékosok felváltva adják le a lövéseket, hogy megpróbálják eltalálni az ellenséges hajókat. Mindkét játékos nem látja a másik flottáját, 
+			ki kell találnod, hol az ideális pozíció a lövéshez! Az első játékos, aki elsüllyeszti az ellenfél összes hajóját, megnyeri a játékot!
+        </p>
+        <h2>Szabályok</h2>
+        <ol>
+            <li>Helyezze el a hajókat a barátságos területen. A barátságos terület azt jelenti, hogy az a terület a tiéd. Látod a blokkokat a barátságos terület játéktábla mellett? Ezek a hajók.
+			Elhelyezheti őket a játéktáblán húzással, vagy ha Ön mobil felhasználó, kattintson az automatikus elhelyezés gombra a hajók elhelyezéséhez
+            </li> 
+            <li>
+               A hajók elhelyezése után megjelenik egy játékindítás gomb. kattintson rá és indítsa el a játékot.
+            </li>
+            <li>
+                Most két játéktáblát fog látni. az egyik a tiéd (barátságos játéktábla), a másik pedig a számítógépé.
+            </li>
+            <li>
+               A játékhoz kattintson a számítógépes játéktábla bármely cellájára. A számítógépes játéktábla cellájára kattintva azt jelenti, hogy meg akarja támadni a számítógép hajóit, és elsüllyeszteni őket. Nem látsz hajókat? Ne aggódj, 
+				ott vannak, és arra várnak, hogy elsüllyedjenek. Csak folytassa a helyzetük találgatását, és süllyessze el őket.
+            </li>
+            <li>
+                Ha megtámadja a számítógépes játéktáblát, a számítógép azzal áll bosszút, hogy megtámadja a saját játéktábláját (barátságos játéktábla). Sajnos nem tudsz ellene tenni semmit.
+            </li>
+            <li>
+                 A legjobb megoldás az, ha elsüllyeszted az összes számítógépet, mielőtt a számítógép ugyanezt tenné veled, és nyerne.
+            </li>
+            <li>
+                Ha egy cella színe kék lesz, az nem fogadott találat, és ha egy cella színe piros lesz, akkor sikeres találat.
+            </li>
+            <li>
+                Minden játéktáblán 4 hajó található. Tehát aki előbb elsüllyeszt 4 hajót, az nyer.
+            </li>
+        </ol>
+    </dialog>
+
+    <div id="whole_game_area_container">
+        <div id="whole_friendly_area_container">
+            <div id="human_area_container">
+                <h2>Saját játék tér</h2>
+                <div id="friendly-area-gameboard" class="container">
+        
+                </div>
+                <button id="start">Kezdés</button>
+            </div>
+    
+            <div id="all_ship_container">
+                <div id="carrier" class="draggable" draggable="true" data-index="" data-shiplength="5">
+                    <div class="box" data-index="0"></div>
+                    <div class="box" data-index="1"></div>
+                    <div class="box" data-index="2"></div>
+                    <div class="box" data-index="3"></div>
+                    <div class="box" data-index="4"></div>
+                </div>
+            
+                <div id="battleship" class="draggable" draggable="true" data-index="" data-shiplength="4">
+                    <div class="box" data-index="0"></div>
+                    <div class="box" data-index="1"></div>
+                    <div class="box" data-index="2"></div>
+                    <div class="box" data-index="3"></div>
+                </div>
+            
+                <div id="destroyer" class="draggable" draggable="true" data-index="" data-shiplength="3">
+                    <div class="box" data-index="0"></div>
+                    <div class="box" data-index="1"></div>
+                    <div class="box" data-index="2"></div>
+                </div>
+            
+                <div id="submarine" class="draggable" draggable="true" data-index="" data-shiplength="2">
+                    <div class="box" data-index="0"></div>
+                    <div class="box" data-index="1"></div>
+                </div>
+
+                <div id="titanic" class="draggable" draggable="true" data-index="" data-shiplength="1">
+                    <div class="box" data-index="0"></div>
+
+                </div>
+                <span>vagy</span>
+                <button id="auto_place">Automatikus elhelyezés</button>
+            </div>
+        </div>
+    
+        <div id="score_card_container">
+            <div id='human_score_card' class="player_score_card">ÉN
+                <p id="human_missed_hits">Elhibázott lövések:0</p>
+                <p id="human_hits">Pontok:0</p>
+            </div>
+            <div id='ai_score_card' class="player_score_card">Gép
+                <p id="ai_missed_hits">Elhibázott lövések:0</p>
+                <p id="ai_hits">Pontok:0</p>
+            </div>
+        </div>
+        
+        <div id="ai_container">    
+            <h2>Gép játék tere</h2>
+            <div id="enemy-area-gameboard" class="container">
+    
+            </div>
+        </div>    
+    </div>
+
+    <script src="main.js"></script>
+	
+
+<footer style="background-color: #333; color: #fff; padding: 20px; text-align: center; position: absolute; bottom: 0; width: 100vw;">
+    <p>Cég neve © 2023. Minden jog fenntartva.</p>
+    <p><a href="https://www.pelda.hu/">www.pelda.hu</a></p>
+</footer>
+
+</body>
+</html>
